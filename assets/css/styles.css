@@ -1,0 +1,341 @@
+        /* =========================================
+           1. VARIABEL CSS
+           ========================================= */
+        :root {
+            --primary: #ffbd39;       /* Warna Emas */
+            --accent-blue: #2196f3;   /* Warna Biru (Untuk judul baru) */
+            --bg-body: #0b0b0b;
+            --bg-card: #161616;
+            --bg-glass: rgba(22, 22, 22, 0.8);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: #333333;
+            --sidebar-width: 300px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Reset Dasar */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+
+        /* =========================================
+           2. SCROLL PROGRESS BAR
+           ========================================= */
+        .scroll-progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px;
+            background: var(--primary); width: 0%; z-index: 9999; transition: width 0.1s;
+        }
+
+        /* =========================================
+           3. SIDEBAR
+           ========================================= */
+        .sidebar {
+            position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh;
+            background: var(--bg-glass); backdrop-filter: blur(10px);
+            border-right: 1px solid var(--border-color);
+            display: flex; flex-direction: column; justify-content: space-between;
+            z-index: 1000; padding: 40px 25px;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-section { text-align: center; margin-bottom: 30px; }
+        .avatar {
+            width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+            border: 4px solid var(--primary); padding: 4px; margin-bottom: 20px;
+        }
+        .name-sidebar { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+        
+        .social-sidebar { display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+        .social-sidebar a {
+            width: 40px; height: 40px; background: rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; transition: all 0.3s; color: var(--text-muted);
+        }
+        .social-sidebar a:hover { background: var(--primary); color: #000; transform: translateY(-3px); }
+
+        .nav-menu ul { display: flex; flex-direction: column; gap: 8px; }
+        .nav-item a {
+            display: flex; align-items: center; padding: 14px 20px;
+            border-radius: 12px; color: var(--text-muted); font-weight: 500;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .nav-item a i { margin-right: 15px; width: 20px; text-align: center; }
+        .nav-item a:hover, .nav-item a.active {
+            background: rgba(255, 189, 57, 0.1); color: var(--primary);
+        }
+        .nav-item a.active::before {
+            content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            width: 4px; height: 20px; background: var(--primary); border-radius: 0 4px 4px 0;
+        }
+
+        .sidebar-footer {
+            text-align: center; font-size: 0.85rem; color: var(--text-muted);
+            padding-top: 20px; border-top: 1px solid var(--border-color);
+        }
+
+        /* =========================================
+           4. MAIN CONTENT
+           ========================================= */
+        .main-content { margin-left: var(--sidebar-width); position: relative; }
+
+        /* HERO SECTION (Foto di Kanan, Teks di Kiri) */
+        .hero-wrapper {
+            min-height: 100vh;
+            display: flex; 
+            flex-direction: row; /* Baris default */
+            align-items: center;
+            justify-content: space-between; /* Teks Kiri, Foto Kanan */
+            padding: 0 80px;
+            position: relative;
+            gap: 50px;
+        }
+
+        .bg-layer {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, #0b0b0b 0%, rgba(11,11,11,0.8) 60%, rgba(11,11,11,0.6) 100%),
+                        url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&q=80');
+            background-size: cover; background-position: center;
+            z-index: -1;
+        }
+
+        .text-layer { max-width: 600px; order: 1; } 
+        .text-layer h1 { font-size: 4rem; line-height: 1.1; font-weight: 800; margin-bottom: 20px; }
+        .text-layer .highlight { color: var(--primary); }
+        
+        .intro-text {
+            font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px;
+            /* background: rgba(255,255,255,0.03); */
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .role-wrapper { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 20px; }
+        .role-text { color: var(--text-main); font-weight: 600; border-bottom: 2px solid var(--primary); }
+
+        /* IMAGE LAYER (Kanan) */
+        .image-layer { flex-shrink: 0; order: 2; } /* Order 2 agar di kanan */
+        .hero-photo {
+            width: 400px; height: 400px; object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            transition: transform 0.4s ease;
+        }
+        .hero-photo:hover { transform: scale(1.02); }
+
+        /* =========================================
+           5. SECTION UMUM
+           ========================================= */
+        section { padding: 100px 80px; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .section-header { margin-bottom: 60px; text-align: center; }
+        .section-subtitle { color: var(--primary); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+        .section-title { font-size: 2.5rem; margin-top: 10px; }
+
+        /* =========================================
+           6. BAGIAN PROFIL DETAIL (Layout Baru Sesuai Gambar)
+           ========================================= */
+        .profile-detail-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+
+        .profile-detail-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .profile-detail-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .profile-detail-img:hover img { transform: scale(1.05); }
+
+        .profile-detail-content {
+            flex: 1;
+        }
+
+        /* Judul Berwarna Biru Sesuai Permintaan */
+        .blue-title {
+            color: var(--accent-blue);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .profile-detail-text {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .detail-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .detail-socials a {
+            color: var(--text-muted); font-size: 1.2rem; margin-right: 15px; transition: 0.3s;
+        }
+        .detail-socials a:hover { color: var(--primary); }
+
+        .openai-note {
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* =========================================
+           7. PORTFOLIO & FILTERING
+           ========================================= */
+        .filter-buttons { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .filter-btn {
+            background: transparent; border: 1px solid var(--border-color); color: var(--text-muted);
+            padding: 10px 25px; border-radius: 30px; cursor: pointer; transition: 0.3s; font-weight: 500;
+        }
+        .filter-btn:hover, .filter-btn.active { background: var(--primary); color: #000; border-color: var(--primary); }
+
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .project-card {
+            background: var(--bg-card); border-radius: 15px; overflow: hidden;
+            border: 1px solid var(--border-color); transition: 0.4s; position: relative;
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+        .project-card.hide { display: none; } 
+        .project-card.show { animation: fadeIn 0.5s ease forwards; }
+
+        .thumb-wrapper { position: relative; overflow: hidden; height: 220px; }
+        .thumb-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .project-card:hover .thumb-wrapper img { transform: scale(1.1); }
+        
+        .card-overlay {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+            display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s;
+        }
+        .project-card:hover .card-overlay { opacity: 1; }
+        .view-btn {
+            width: 50px; height: 50px; background: var(--primary); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: #000; font-size: 1.2rem;
+        }
+
+        .card-content { padding: 25px; }
+        .card-category { color: var(--primary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+        .card-title { font-size: 1.3rem; margin: 10px 0; }
+        .card-link { color: var(--text-muted); font-size: 0.9rem; text-decoration: underline; }
+
+        /* =========================================
+           8. RESUME / TABS
+           ========================================= */
+        .tab-nav { display: flex; justify-content: center; border-bottom: 1px solid var(--border-color); margin-bottom: 40px; }
+        .tab-btn {
+            padding: 15px 30px; background: none; border: none; color: var(--text-muted);
+            font-size: 1.1rem; font-weight: 500; cursor: pointer; position: relative;
+        }
+        .tab-btn.active { color: var(--primary); }
+        .tab-btn.active::after {
+            content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--primary);
+        }
+
+        .tab-content { display: none; animation: slideUp 0.5s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .resume-item {
+            border-left: 2px solid var(--border-color); padding-left: 30px; margin-bottom: 40px; position: relative;
+        }
+        .resume-item::before {
+            content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px;
+            background: var(--primary); border-radius: 50%;
+        }
+        .resume-date { color: var(--primary); font-weight: 600; margin-bottom: 5px; display: block; }
+        .resume-title { font-size: 1.4rem; margin-bottom: 10px; }
+        .resume-desc { color: var(--text-muted); }
+
+        .skill-item { margin-bottom: 25px; }
+        .skill-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .skill-bar { height: 8px; background: #333; border-radius: 4px; overflow: hidden; }
+        .skill-fill { height: 100%; background: var(--primary); width: 0; transition: width 1.5s ease-out; }
+
+        /* =========================================
+           9. FOOTER & FLOATING
+           ========================================= */
+        .footer { padding: 50px 80px; border-top: 1px solid var(--border-color); margin-top: 50px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        
+        .floating-left {
+            position: fixed; bottom: 30px; left: 30px;
+            display: flex; gap: 15px; z-index: 900;
+        }
+        .float-btn {
+            width: 50px; height: 50px; background: var(--bg-card);
+            border: 1px solid var(--border-color); color: var(--text-main);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; transition: all 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .float-btn.github:hover { background: #333; color: #fff; border-color: #fff; }
+        .float-btn.whatsapp:hover { background: #25D366; color: #fff; border-color: #25D366; }
+
+        /* =========================================
+           10. RESPONSIVE
+           ========================================= */
+        .mobile-toggle {
+            display: none; position: fixed; top: 20px; right: 20px; z-index: 1100;
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            color: #fff; padding: 10px; border-radius: 8px; cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar { transform: translateX(-100%); width: 280px; background: #000; }
+            .sidebar.active { transform: translateX(0); box-shadow: 5px 0 20px rgba(0,0,0,0.5); }
+            .main-content { margin-left: 0; }
+            .mobile-toggle { display: block; }
+            
+            /* Mobile Hero: Foto di atas/bawah, Teks sebaliknya */
+            .hero-wrapper {
+                flex-direction: column-reverse; 
+                padding: 120px 20px 50px;
+                text-align: center; justify-content: center; gap: 30px;
+            }
+            .text-layer { max-width: 100%; }
+            .text-layer h1 { font-size: 2.5rem; }
+            .intro-text { text-align: left; }
+            .hero-photo { width: 280px; height: 280px; margin: 0 auto; }
+
+            /* Layout Baru Mobile */
+            .profile-detail-layout { flex-direction: column; padding: 30px; }
+            .detail-footer { flex-direction: column; text-align: center; }
+
+            section { padding: 60px 20px; }
+            .footer { padding: 40px 20px; text-align: center; }
+            .footer-content { justify-content: center; }
+        }

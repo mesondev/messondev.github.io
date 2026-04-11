@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Meson Wakerkwa | Modern Developer</title>
+    
+    <!-- Memuat Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Memuat FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Memuat Animasi AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- koneksi stylesheet css-->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+
+    
+
+    <div class="scroll-progress-bar" id="progressBar"></div>
+
+    <button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Menu">
+        <i class="fa-solid fa-bars fa-lg"></i>
+    </button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <div class="profile-section">
+                <img src="./assets/Images/images1.jpeg" alt="Meson" class="avatar">
+                <h2 class="name-sidebar">Meson Wakerkwa</h2>
+                <p>Web Design | Developer </p>
+                <div class="social-sidebar">
+                    <a href="https://github.com/WakerkwaMeson" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/meson9918/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/meson-wakerkwa-a005b4243/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active" onclick="closeMobileMenu()"><i class="fa-solid fa-house"></i> BERANDA</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-user"></i> TENTANG</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-briefcase"></i> PROYEK</a></li>
+                    <li class="nav-item"><a href="#resume" class="nav-link" onclick="closeMobileMenu()"><i class="fa-solid fa-file-lines"></i> RIWAYAT</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" onclick="closeMobileMenu()"><i class="fa-brands fa-whatsapp"></i> KONTAK</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-footer">
+            &copy; <span id="year"></span> Meson Wakerkwa.
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+        
+        <!-- HERO SECTION: Foto di Kanan, Teks di Kiri -->
+        <section id="home" class="hero-wrapper">
+            <div class="bg-layer"></div>
+            
+            <div class="text-layer" data-aos="fade-right">
+                <span class="greeting">Hello, I am</span>
+                <h1>Meson <span class="highlight">Wakerkwa</span></h1>
+                <div class="role-wrapper">
+                    I'm a <span id="typing-text" class="role-text"></span>
+                </div>
+                <p class="intro-text">
+                    👋🏽 Halo, saya Meson! Saya mahasiswa Informatika di Uningrat Papua, fokus belajar web programming. Saat ini saya aktif di komunitas SaCode yang metode belajarnya sangat mudah dipahami.
+                </p>
+            </div>
+
+            <div class="image-layer" data-aos="fade-left">
+                <!-- Ganti src dengan foto asli Anda -->
+                <img src="./assets/Images/profil.jpeg" alt="images" class="hero-photo">
+            </div>
+        </section>
+
+                    <!-- ABOUT / EXPERIENCE SECTION -->
+        <section id="about" class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Tentang Saya</span>
+                <h2 class="section-title">Perjalanan & Komunitas</h2>
+            </div>
+
+            <div class="about-layout" data-aos="fade-up" data-aos-delay="10">
+                <div class="about-img-wrapper">
+                    <img src="https://sacode.web.id/images/logo-sacode-web-2025-dark.png" 
+                         onerror="this.src='https://picsum.photos/seed/sacode/600/400'"
+                         alt="Komunitas SaCode Papua">
+                </div>
+                <div class="about-content">
+                    <span class="cert-badge"><i class="fa-solid fa-certificate"></i> Certified SaCode Member</span>
+                    <h3 class="blue-title">Berkembang Bersama SaCode Papua</h3>
+                    <p class="about-text">
+                        Sejak tahun 2025, saya aktif belajar dan mengembangkan keterampilan di bidang web development, khususnya dalam HTML, CSS, dan JavaScript. Komunitas SaCode menjadi tempat terbaik untuk bertumbuh bersama teman-teman programmer muda Papua.
+                    </p>
+                    <p class="about-text">
+                        Selama mengikuti komunitas ini, saya banyak mendapatkan ilmu baru yang sangat bermanfaat untuk masa depan saya, termasuk dasar-dasar pemrograman JavaScript. Saya juga berhasil memperoleh <strong>Sertifikat</strong> hasil belajar.
+                    </p>
+                    <a href="https://sacode.web.id" target="_blank" style="color: var(--primary); font-weight: 600;">Kunjungi SaCode <i class="fa-solid fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
+       
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" style="background: #0f0f0f;">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Galeri Karya</span>
+                    <h2 class="section-title">Proyek Terbaru</h2>
+                </div>
+
+                <div class="filter-buttons" data-aos="fade-up">
+                    <button class="filter-btn active" onclick="filterProjects('all')">Semua</button>
+                    <button class="filter-btn" onclick="filterProjects('web')">Website</button>
+                    <button class="filter-btn" onclick="filterProjects('design')">Desain</button>
+                </div>
+                <!-- Halaman Pertama -->
+                <div class="portfolio-grid">
+                    <div class="project-card show" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                        <div class="thumb-wrapper">
+                            <img src="./assets/Images/Market/roict-coffee.png" alt="Kopi Tiom">
+                            <div class="card-overlay">
+                                <a href="https://mesondev.github.io/roict-coffee.io/" target="_blank" class="view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">E-Commerce</span>
+                            <h3 class="card-title">ROICT COFFEE</h3>
+                            <a href="https://mesondev.github.io/roict-coffee.io/" target="_blank" class="card-link">Lihat Demo <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- halaman Kedua  -->
+                    <div class="project-card show" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                        <div class="thumb-wrapper">
+                            <img src="./assets/Images/Market/web-gereja.png" alt="IKBM">
+                            <div class="card-overlay">
+                                <a href="https://mesondev.github.io/gereja.yohanes.entrop.io/" target="_blank" class="view-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">Baptist Church</span>
+                            <h3 class="card-title">SI Gereja Baptis Yoohanes Entrop</h3>
+                            <a href="https://mesondev.github.io/gereja.yohanes.entrop.io/" target="_blank" class="card-link">Lihat Demo <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="project-card show" data-category="design" data-aos="fade-up" data-aos-delay="300">
+                        <div class="thumb-wrapper">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80" alt="Design">
+                            <div class="card-overlay">
+                                <a href="#" class="view-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">UI/UX Design</span>
+                            <h3 class="card-title">SaCode Dashboard</h3>
+                            <a href="#" class="card-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+ <!-- RESUME / SKILLS SECTION -->
+        <section id="resume" class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Riwayat</span>
+                <h2 class="section-title">Pendidikan & Keahlian</h2>
+            </div>
+
+            <div class="tabs-container" data-aos="zoom-in" data-aos-duration="600">
+                <div class="tab-header">
+                    <button class="tab-btn active" onclick="openTab(event, 'education')">Pendidikan</button>
+                    <button class="tab-btn" onclick="openTab(event, 'experience')">Pengalaman</button>
+                    <button class="tab-btn" onclick="openTab(event, 'skills')">Keahlian</button>
+                </div>
+
+                <!-- Tab Pendidikan -->
+                <div id="education" class="tab-pane active">
+                    <h1>Riwayat Pendidikan</h1>
+                    <div class="resume-item">
+                        <span class="resume-date">2022 - 2025</span>
+                        <h4 class="resume-title">Perjalanan Belajar Meson Wakerkwa</h4>
+                        <span class="resume-org">Kampus UNINGRAT Papua & Komunitas SaCode</span>
+                        <p class="resume-desc">Saya adalah Meson Wakerkwa, seorang anak gunung yang sedang menempuh ilmu di bangku kuliah jurusan Informatika. 
+                            Fokus saya adalah menjadi seorang web programmer yang handal. Saat ini, saya juga aktif belajar bersama komunitas SaCode, tempat yang luar biasa untuk berbagi dan bertumbuh. Di sana, saya tidak hanya belajar coding, tapi juga membangun semangat untuk menciptakan solusi teknologi yang dibutuhkan masyarakat. 
+                            Saya percaya, belajar adalah jalan untuk memberi dampak positif bagi banyak orang.</p>
+                    </div>
+
+                    <!-- <h1>Perjalanan Belajar Coding</h1> -->
+                    <div class="resume-item">
+                        <span class="resume-date">2025 - 2026 - Sekarang </span>
+                        <h4 class="resume-title">Perjalanan Belajar Coding</h4>
+                        <span class="resume-org">Di Komunitas SaCode</span>
+                        <p class="resume-desc">
+                            Selama menempuh ilmu coding, saya berhasil membuat proyek pertama untuk SMP Negeri 4 Pirime. 
+                            Dengan dukungan komunitas SaCode, saya terus mengembangkan kemampuan dan berkontribusi menciptakan solusi teknologi yang bermanfaat bagi masyarakat. 
+                            Proyek ini menjadi langkah awal untuk mewujudkan visi saya dalam membangun teknologi yang membantu kehidupan banyak orang.</p>
+                            <span class="resume-date">Saya Masih Aktif Di Comunitas SaCode</span>
+                        </div>
+                </div>
+
+                <!-- Tab Pengalaman -->
+                <div id="experience" class="tab-pane">
+                    <h1>Pengalaman Kerja</h1>
+                    <div class="resume-item">
+                        <span class="resume-date">2025 - Sekarang</span>
+                        <h4 class="resume-title">Belum Memiliki Pengalaman Kerja Formal</h4>
+                        <span class="resume-org">Masih dalam proses belajar dan mengembangkan diri</span>
+                        <p class="resume-desc">
+                            Saat ini saya belum memiliki pengalaman kerja formal di perusahaan, 
+                            namun saya aktif mengembangkan keterampilan di bidang web development dan teknologi informasi. Saya membuat berbagai proyek pribadi dan mengikuti kegiatan komunitas seperti SaCode untuk meningkatkan kemampuan saya. 
+                            Saya percaya bahwa setiap langkah kecil dalam proses belajar adalah fondasi besar menuju masa depan yang lebih baik.</p>
+                    </div>
+                    <div class="resume-item">
+                        <span class="resume-date">2025 - Sekarang</span>
+                        <h4 class="resume-title">Belajar Coding Secara Mandiri</h4>
+                        <span class="resume-org">Komunitas SaCode - Papua</span>
+                        <p class="resume-desc">Saya belajar coding secara mandiri, baik di rumah maupun di mana saja dan kapan saja selama saya merasa nyaman. 
+                            Melalui komunitas SaCode, saya semakin termotivasi untuk terus mengasah kemampuan dan berinteraksi dengan sesama pembelajar teknologi. Proses belajar ini bukan hanya membentuk keterampilan teknis, 
+                            tetapi juga karakter pantang menyerah dan semangat untuk berkontribusi membangun Papua melalui teknologi.</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <span class="resume-date">2026 - Sekarang</span>
+                        <h4 class="resume-title">Tutorial Coding Dasar HTML CSS & JavaScript</h4>
+                        <span class="resume-org">LSM Pengembangan SDM & Riset di Papua</span>
+                        <p class="resume-desc">Saat ini saya mengajar dasar-dasar pemrograman web seperti HTML dan CSS. 
+                            Tujuan saya bukan hanya untuk mengajar, tetapi juga untuk semakin memahami dan mendalami bahasa pemrograman yang saya pelajari. Karena dengan mengajar, saya bisa sekaligus belajar lebih dalam dan memahami logika coding dengan lebih baik. Ini juga menjadi sarana bagi saya untuk terus berkembang bersama komunitas belajar seperti SaCode, 
+                            agar ke depan bisa memberi dampak lebih luas melalui teknologi di Papua.</p>
+                    </div>
+                </div>
+
+                <!-- Tab Keahlian -->
+                <div id="skills" class="tab-pane">
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <h4>Development</h4>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>HTML & CSS</span><span>90%</span></div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>JavaScript</span><span>45%</span></div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 45%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>WordPress CMS</span><span>30%</span></div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 30%"></div></div>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Design & Creative</h4>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Canva</span><span>90%</span></div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Photoshop</span><span>50%</span></div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 50%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Photography</span><span>100%</span></div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 100%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+         <!-- BAGIAN PROFIL DETAIL (Sesuai Gambar: Kiri Foto, Kanan Teks Biru) -->
+        <section id="about">
+            <div class="container">
+                <div class="profile-detail-layout" data-aos="zoom-in">
+                    <!-- KIRI: Foto Besar (Orang dengan jaket denim) -->
+                    <div class="profile-detail-img">
+                        <!-- Placeholder gambar pria jaket -->
+                        <img src="assets/Images/profil.jpeg" alt="Meson Wakerkwa Profile">
+                    </div>
+
+                    <!-- KANAN: Konten -->
+                    <div class="profile-detail-content">
+                        <!-- Judul Biru Sesuai Permintaan -->
+                        <h2 class="blue-title">Saya Meson</h2>
+                        
+                        <p class="profile-detail-text">
+                            👋 hai Saya adalah seorang mahasiswa Informatika yang memiliki passion tinggi di dunia teknologi. Saat ini, 
+                            saya aktif belajar coding di komunitas SaCode. Di sana, saya tidak hanya belajar menulis kode, 
+                            tetapi juga bagaimana menciptakan solusi digital yang nyata untuk membantu masyarakat. Metode belajar di SaCode sangat interaktif dan mudah dipahami, membuat saya semakin termotivasi untuk menjadi developer yang handal.
+                        </p>
+
+                        <!-- Footer Bagian Ini: Sosial Media & OpenAI -->
+                        <div class="detail-footer">
+                            <div class="detail-socials">
+                                <a href="https://github.com/WakerkwaMeson" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://www.instagram.com/meson9918/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/meson-wakerkwa-a005b4243/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                            <div class="openai-note">
+                                _ Tulisan ini dibantu oleh OpenAI 😁 🙏
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="contact" class="footer">
+            <div class="container footer-content">
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 10px;">Mari Bekerja Sama!</h2>
+                    <p style="color: var(--text-muted);">Saya siap membantu mewujudkan ide digital Anda.</p>
+                </div>
+                <div>
+                    <!-- Link WA dengan Nomor Baru: 08134893823 -->
+                    <a href="https://wa.me/628134893823" target="_blank" style="background: #25D366; color: white; padding: 12px 25px; border-radius: 30px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">
+                        <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.9rem;">
+                &copy; <span id="yearFooter"></span> Meson Wakerkwa. All Rights Reserved.
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- FLOATING BUTTONS (Nomor HP Baru) -->
+    <div class="floating-left">
+        <a href="https://github.com/mesondev.github.io" target="_blank" class="float-btn github" title="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://wa.me/628134893823" target="_blank" class="float-btn whatsapp" title="Chat WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/Js/Javascript.js"> </script>
+    <script src="./assets/Js/main.js"> </script>
+</body>
+</html>

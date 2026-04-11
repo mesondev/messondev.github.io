@@ -1,0 +1,65 @@
+  /* =========================================
+           6. ABOUT SECTION
+           ========================================= */
+        .about-layout {
+            display: grid; grid-template-columns: ; gap: 30px; align-items: center;
+            background: var(--bg-card); padding: 60px; border-radius: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 50px;
+            height: auto;
+            /* width: 100%; */
+        }
+
+        .about-img-wrapper {
+            border-radius: 15px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .about-img-wrapper img { width: 100%; height: auto; transition: transform 0.5s; }
+        .about-img-wrapper:hover img { transform: scale(1.05); }
+
+        .about-content h3 { font-size: 2rem; margin-bottom: 20px; line-height: 1.3; }
+        .blue-title { color: var(--accent-blue) !important; }
+        .about-text { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; line-height: 1.8; text-align: justify; }
+        .cert-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(33, 150, 243, 0.1); color: var(--accent-blue);
+            padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+/* =========================================
+           8. RESUME / TABS
+           ========================================= */
+        /* .tabs-container { background: var(--bg-card); border-radius: 20px; padding: 40px; border: 1px solid var(--border-color); } */
+        .tab-header { display: flex; justify-content: center; border-bottom: 1px solid var(--border-color); margin-bottom: 40px; flex-wrap: wrap; gap: 10px; }
+        .tab-btn {
+            padding: 12px 25px; background: none; border: none; color: var(--text-muted);
+            font-size: 1rem; font-weight: 500; cursor: pointer; position: relative; transition: 0.3s;
+        }
+        .tab-btn:hover { color: #fff; }
+        .tab-btn.active { color: var(--primary); font-weight: 600; }
+        .tab-btn.active::after {
+            content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--primary);
+        }
+
+        .tab-pane { display: none; animation: fadeIn 0.5s ease; }
+        .tab-pane.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .resume-item {
+            border-left: 2px solid var(--border-color); padding-left: 30px; margin-bottom: 40px; position: relative;
+        }
+        .resume-item::before {
+            content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px;
+            background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary);
+        }
+        .resume-date { color: var(--primary); font-weight: 600; margin-bottom: 5px; display: block; font-size: 0.9rem; }
+        .resume-title { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
+        .resume-desc { color: var(--text-muted); font-size: 0.95rem; }
+        .resume-org { display: block; font-style: italic; color: #888; margin-bottom: 10px; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .skill-group h4 { margin-bottom: 20px; color: var(--accent-blue); border-left: 3px solid var(--accent-blue); padding-left: 10px; }
+        .skill-item { margin-bottom: 20px; }
+        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
+        .progress-track { height: 6px; background: #333; border-radius: 3px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--primary); border-radius: 3px; width: 0; transition: width 1.5s ease-out; }
